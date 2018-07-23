@@ -1,0 +1,29 @@
+server:
+  port: 8080
+cache: false
+mybatis:
+  config: classpath:Configuration.xml
+  typeAliasesPackage: indi.demo.flying.pojo
+spring: 
+  datasource: 
+    name: testdb
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    useSSL: false
+    username: sa
+    password: '!@#rjyjy'
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    schema: classpath:schema.sql
+    data: classpath:data.sql
