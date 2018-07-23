@@ -8,7 +8,7 @@
 		<artifactId>spring-boot-dependencies</artifactId>
 		<version>1.5.7.RELEASE</version>
 	</parent>
-	<artifactId>flying-demo-springservice</artifactId>
+	<artifactId>flying-demo-use-springboot</artifactId>
 	<name>mailHandle-service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -173,7 +173,7 @@
 			</testResource>
 		</testResources>
 
-		<finalName>flying-demo-springboot</finalName>
+		<finalName>flying-demo-use-springboot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
