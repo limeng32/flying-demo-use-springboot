@@ -22,4 +22,4 @@ How to play？
 
 查看一个帐号的详情：			http://localhost:8080/getAccount?id=${账号的id}
 
-查看两个帐号的详情：			http://localhost:8080/getAccountById1OrId2?id1=${账号1的id}&${账号2的id}
+查看两个帐号的详情：			http://localhost:8080/getAccountById1OrId2?id1=${账号1的id}&id2=${账号2的id}
