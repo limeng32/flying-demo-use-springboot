@@ -18,8 +18,8 @@
 		<package name="indi.demo.flying.pojo" />
 	</typeAliases>
 	<typeHandlers>
-		<typeHandler handler="BooleanHandler" />
-		<typeHandler handler="AdvancedStringTypeHandler" />
+		<typeHandler handler="indi.mybatis.flying.handlers.BooleanHandler" />
+		<typeHandler handler="indi.mybatis.flying.handlers.AdvancedStringTypeHandler" />
 	</typeHandlers>
 	<plugins>
 		<plugin interceptor="indi.mybatis.flying.interceptors.AutoMapperInterceptor">

@@ -20,7 +20,7 @@
 
 	<delete id="delete">flying:delete</delete>
 
-	<resultMap id="result" type="Account_" autoMapping="true">
+	<resultMap id="result" type="indi.demo.flying.pojo.Account_" autoMapping="true">
 		<id property="id" column="id" />
 	</resultMap>
 </mapper>
