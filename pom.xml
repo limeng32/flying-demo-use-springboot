@@ -144,6 +144,11 @@
 			<artifactId>persistence-api</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<resources>
@@ -199,4 +204,18 @@
 		</plugins>
 	</build>
 	<packaging>jar</packaging>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<property>
+					<name>DEV</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+			</properties>
+		</profile>
+	</profiles>
 </project>

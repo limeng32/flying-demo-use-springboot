@@ -25,5 +25,3 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-    schema: classpath:schema.sql
-    data: classpath:data.sql

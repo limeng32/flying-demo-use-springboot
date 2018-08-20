@@ -1,0 +1,4 @@
+spring: 
+  datasource: 
+    schema: classpath:schema.dev.sql
+    data: classpath:data.dev.sql
