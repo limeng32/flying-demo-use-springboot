@@ -10,7 +10,7 @@ spring:
     url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     useSSL: false
     username: sa
-    password: '!@#rjyjy'
+    password: 
     type: com.alibaba.druid.pool.DruidDataSource
     filters: stat
     maxActive: 20
