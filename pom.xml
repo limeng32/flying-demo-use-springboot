@@ -9,7 +9,7 @@
 		<version>1.5.7.RELEASE</version>
 	</parent>
 	<artifactId>flying-demo-use-springboot</artifactId>
-	<name>mailHandle-service</name>
+	<name>flying-demo-use-springboot</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
