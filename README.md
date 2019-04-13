@@ -82,7 +82,7 @@ http://localhost:8080/addCommodityToCart?cartId=${购物车的id}&commId=${商�
 按两个用户id查询购买的商品详情
 http://localhost:8080/getCartCommodityByPersonId1OrId2?id1=${用户id1}&id2=${用户id2}
 
-以上方法的实现代码可见： https://github.com/limeng32/flying-demo-use-springboot/blob/useJar/src/main/java/indi/demo/flying/controller/MainController.java 
+以上方法的实现代码可见： https://github.com/limeng32/flying-demo-use-springboot/blob/master/src/main/java/indi/demo/flying/controller/MainController.java 
 
 从 `use-flying-0.9.3` 分支开始我们采用双向相关的方式构建 pojo，以求打造一个真实可用的电商前台，关于双向相关的详细信息请见： https://my.oschina.net/u/2280950/blog/1580056
 
