@@ -16,12 +16,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.github.springtestdbunit.annotation.DatabaseSetups;
 import com.github.springtestdbunit.annotation.DatabaseTearDown;
-import com.github.springtestdbunit.annotation.DatabaseTearDowns;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
-import com.github.springtestdbunit.annotation.ExpectedDatabases;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
 import com.github.springtestdbunit.dataset.ReplacementDataSetLoader;
 
@@ -115,16 +112,10 @@ public class PojoTest {
 		personService.myUpdate(person2);
 	}
 
-//	@Test
-	@DatabaseSetups({
-			@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.xml", connection = "dataSource1"),
-			@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource2.xml", connection = "dataSource2") })
-	@ExpectedDatabases({
-			@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.result.xml", connection = "dataSource1", override = false),
-			@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource2.result.xml", connection = "dataSource2", override = false) })
-	@DatabaseTearDowns({
-			@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.result.xml", connection = "dataSource1"),
-			@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource2.result.xml", connection = "dataSource2"), })
+	@Test
+	@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.xml", connection = "dataSource")
+	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.result.xml", connection = "dataSource", override = false)
+	@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCart.dataSource.result.xml", connection = "dataSource")
 	public void testCart() {
 		Cart cart = cartService.mySelect("aaa");
 		Assert.assertEquals("张三", cart.getPerson().getName());
@@ -140,16 +131,10 @@ public class PojoTest {
 		personService.myUpdate(zhangsan);
 	}
 
-//	@Test
-	@DatabaseSetups({
-			@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.xml", connection = "dataSource1"),
-			@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource2.xml", connection = "dataSource2") })
-	@ExpectedDatabases({
-			@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.result.xml", connection = "dataSource1", override = false),
-			@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource2.result.xml", connection = "dataSource2", override = false) })
-	@DatabaseTearDowns({
-			@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.result.xml", connection = "dataSource1"),
-			@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource2.result.xml", connection = "dataSource2"), })
+	@Test
+	@DatabaseSetup(type = DatabaseOperation.CLEAN_INSERT, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.xml", connection = "dataSource")
+	@ExpectedDatabase(assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.result.xml", connection = "dataSource", override = false)
+	@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "/indi/demo/flying/test/pojoTest/testCartCommodity.dataSource.result.xml", connection = "dataSource")
 	public void testCartCommodity() {
 		CartCommodity cartCommodity = cartCommodityService.mySelect(100000000000001L);
 		Assert.assertEquals("普通会员", cartCommodity.getCart().getPerson().getRole().getName());
