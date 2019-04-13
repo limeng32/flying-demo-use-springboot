@@ -28,5 +28,10 @@
 	</plugins>
 	<mappers>
 		<mapper resource="indi/demo/flying/mapper/Account_.xml" />
+		<mapper resource="indi/demo/flying/mapper/Cart.xml" />
+		<mapper resource="indi/demo/flying/mapper/CartCommodity.xml" />
+		<mapper resource="indi/demo/flying/mapper/Commodity.xml" />
+		<mapper resource="indi/demo/flying/mapper/Person.xml" />
+		<mapper resource="indi/demo/flying/mapper/Role.xml" />
 	</mappers>
 </configuration>

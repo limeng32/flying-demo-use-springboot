@@ -1,0 +1,4 @@
+<dataset>
+	<ROLE ID="aaa" NAME="普通会员" VALUE="normal" />
+	<ROLE ID="bbb" NAME="银牌会员" VALUE="silver" />
+</dataset>
